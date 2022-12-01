@@ -1,97 +1,78 @@
-
+// import logo from './logo.svg';
 import './App.css';
-import React, { Children } from 'react';
+import React from 'react';
 
 import Busqueda from './Busqueda/Busqueda';
 import Lista from './Lista/Lista';
 import Contacto from './Contacto/Contacto';
 import AgregarAmigo from './AgregarAmigo';
-import {ContactoContext,ContactoProvider } from './Context/ContactoProvider';
+import ModalAmigo from './ModalAmigo/ModalAmigo';
 
+import {ContactoProvider,ContactoContext} from './Context/ContactoProvider';
 
-function App() {
+function App(props) {
 
+//   let contactos=[
+//     {
+//         nombre:"Guillermo",
+//         telefono:"3221592771",
+//         correo:"guillogallugdg@gmail.com"
+//     },
+//     {
+//         nombre:"Mocho",
+//         telefono:"3221592771",
+//         correo:"mocho@gmail.com"
+//     },
+//     {
+//         nombre:"Ñera",
+//         telefono:"3221592771",
+//         correo:"ñera@gmail.com"
+//     },
+//     {
+//       nombre:"Gymbro",
+//       telefono:"3221592771",
+//       correo:"gymbroh@gmail.com"
+//     },
+//     {
+//       nombre:"Gbro",
+//       telefono:"3221592771",
+//       correo:"gymbroh@gmail.com"
+//     }
+// ]
 
-    return (
-      
-        <ContactoProvider>
-          <ContactoContext.Consumer>
-            {({cantidadAmigos,
-            contactosFiltro,
-            borrarAmigo})=>(
-              <React.Fragment>
-                  <h1 className="titulo">Mi lista de Contactos</h1>
-      <h3 className='cantidadAmigos'>Tengo {cantidadAmigos} amigos</h3>
-      <Busqueda/>
-      <AgregarAmigo/>
-      <Lista>
+  
+
+  return (
+    <ContactoProvider>
+      <ContactoContext.Consumer>
+        {({cantidadAmigos,
+        contactosFiltro,
+        borrarAmigo,
+        modal})=>(
+          <React.Fragment>
+            <h1 className='h1'>Mi lista de contactos</h1>
+            <h3 className='h2'>Tengo {cantidadAmigos} amigos</h3>
+            <Busqueda/>
+          <AgregarAmigo></AgregarAmigo>
+          <Lista>
             {
                 contactosFiltro.map((contacto)=>{
-                    return (<Contacto
-                            nombre={contacto.nombre}
+                    return(<Contacto
+                            nombres={contacto.nombres}
                             telefono={contacto.telefono}
                             correo={contacto.correo}
                             borrarAmigo={()=>borrarAmigo(contacto.telefono)}/>)
                 })
             }
-      </Lista>
-      {contactosFiltro.length==0 && <h1>No tienes amigos</h1>}
-              </React.Fragment>
-            )}
-      
-          </ContactoContext.Consumer>
-        </ContactoProvider>
-    );
-}
-
-export default App;
-
-
-
-/*function App() {
-  return (
-    <React.Fragment>
-      <h1>Toca biceps</h1>
-      <div>asaasas</div>
-    </React.Fragment>
+          </Lista>
+          {contactosFiltro.length===0 && <h1>No tienes ningun amigo</h1>}
+          {modal && <ModalAmigo/>}
+          </React.Fragment>
+        )}
+    
+      </ContactoContext.Consumer>
+    </ContactoProvider>
   );
-}*/
 
-/*function App() {
-
-  let miDato=10;
-  let miSegundoDato=5;
-
-  return [
-    <h1>Hola</h1>,
-    <h1>{miDato+miSegundoDato}</h1>
-  ];
-}*/
-
-
-//   let contactos=[
-//     {
-//         nombre:"Añame",
-//         telefono:"3223375635",
-//         correo:"foranio@gmail.com"
-//     },
-//     {
-//         nombre:"Chino",
-//         telefono:"3223344535",
-//         correo:"chino@gmail.com"
-//     },
-//     {
-//         nombre:"Plata",
-//         telefono:"3229994535",
-//         correo:"platita@gmail.com"
-//     },
-//     {
-//       nombre:"Gera",
-//       telefono:"3229664535",
-//       correo:"hardmode@gmail.com"
-//   }
-// ]
-
-
-
-
+}
+export default App;
