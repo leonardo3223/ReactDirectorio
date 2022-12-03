@@ -1,12 +1,7 @@
 import React from "react";
 
 
-// const nombre="Jesse";
-// let edad=30;
-// const correo="algo@gmail.com";
-// const actualizaEdad=(nuevaEdad)=>{
-//     edad=nuevaEdad;
-// }
+
 const ContactoContext=React.createContext();
 
 function ContactoProvider(props){
@@ -58,8 +53,6 @@ function ContactoProvider(props){
   else{
     contactosFiltro=contactosList;
   }
-
-
     return(
         <ContactoContext.Provider value={{
             cantidadAmigos,
@@ -75,8 +68,5 @@ function ContactoProvider(props){
         </ContactoContext.Provider>
     )
 }
-
-
-
 
 export {ContactoContext, ContactoProvider};

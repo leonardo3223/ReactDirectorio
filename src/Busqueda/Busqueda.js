@@ -10,7 +10,6 @@ function Busqueda(props){
         setValorBusqueda(event.target.value);
     }
 
-
     return(
         
         <div className="contenedor">
@@ -19,8 +18,6 @@ function Busqueda(props){
         </div>
 
     )
-
-
 }
 
 export default Busqueda

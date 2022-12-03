@@ -60,5 +60,4 @@ function ModalAmigo(){
     )
 }
 
-
 export default ModalAmigo;

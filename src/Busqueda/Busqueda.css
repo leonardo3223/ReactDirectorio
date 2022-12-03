@@ -1,60 +1,64 @@
-*{
-    font-family: Arial, Helvetica, sans-serif;
-    color: black;
-    margin: 0%;
-    background-color: antiquewhite;
-
+body{
+    background-color: #BADCFF ;
 }
 
-.h1{
-    font-size: 70px;
-    padding-left: 15px;
-    background-color: antiquewhite;
-    justify-content: center;
-    align-items: center;
-    display: flex;
+.titulo{
+    text-align: center;
+    background-color: #3160F5;
+    color: white;
+    font-size: 50px;
+    margin-top: 0px;
+    margin-bottom: 5%;
+    font-style: italic;
 }
 
-.h2{
-    font-size: 35px;
-    padding-left: 15px;
-    background-color: antiquewhite;
+.cantidadamigos{
     justify-content: center;
-    align-items: center;
     display: flex;
+    text-align: center;
+    border-radius: 5px; 
+    font-size: 30px;
+    color: #3160F5;
 }
 
 div .contenedor{
-    background-color: antiquewhite;
+    display: flex;
     justify-content: center;
-    align-items: center;
-    display: flex;
-    padding-top: 15px;
-}
-
-.lista{
-    display: flex;
-    padding-left: 35px;
-    background-color: antiquewhite;
-}
-
-.divpadre{
-    padding-top: 20px;
-    padding-bottom: 25px;
-    display: flex;
-    flex-direction: row;
-}
-
-div .divhijo{
-    width: 30vw;
-    display: flex;
-    flex-direction: column;
-    padding-left: 35px;
+    margin-bottom: 5%;
     
 }
 
-div div p{
-    width: 30wv;   
+.titulolista{
+    display: flex;
+    justify-content: center;
+    background-color: #3160F5 ;
+    color: white;
+    margin-left: 15%;
+    margin-right: 15%;
+    border-radius: 10px;
+    height: 20%;
+}
+
+.contenedoramigos{
+    background-color: white;
+    margin-right: 30%;
+    margin-left: 30%;
+    border-radius: 10PX;
+}
+
+.nombres{
+    display: flex;
+    justify-content: center;
+    color: #272727;
+    margin-bottom: -10px;
+    
+}
+
+.datos{
+    display: flex;
+    justify-content: center;
+    color: #02009C;
+    
 }
 
 div div button{
@@ -63,13 +67,29 @@ div div button{
     border-radius: 10px;
     cursor: pointer;
     text-transform: uppercase;
-    /* font-size: 18px; */
     overflow: hidden;
     transition: all 500ms ease;
 }
 
-.btn :hover{
-    background-color: aqua;
-    box-shadow: 0 0 10px aqua, 0 0 20px aqua, 0 0 20px aqua, ;
-    color: black;
+.eliminar{
+    background-color: white;
+    color:  #3160F5;
+    border-radius: 10px;
+    margin-left:45%;
+    margin-bottom: 10px;
+    border-color: #3160F5;
+}
+
+.botonamigo{
+    background-color: white;
+    color:  #3160F5;
+    border-radius: 5px;
+    border-color: #3160F5;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 48%;
+    font-size: 20px;
+    top: -50px;
+    
 }

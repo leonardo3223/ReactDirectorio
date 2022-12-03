@@ -9,7 +9,7 @@ function AgregarAmigo(){
         setModal(true);
     }
     return(
-        <button onClick={abreModal}>+Amigo</button>
+        <button onClick={abreModal} className="botonamigo">+Amigo</button>
     );
 }
 

@@ -1,22 +1,20 @@
 import React from "react";
 
-
 function Contacto(props){
 
     function miFuncion(){
         props.borrarAmigo();
     }
 
-
     return(
-            <div className="divpadre">
-                <div className="divhijo">
-                    <h2>{props.nombres} </h2>
-                    <p>
+            <div className="contenedoramigos">
+                <div>
+                    <h2 className="nombres">{props.nombres} </h2>
+                    <p className="datos">
                         {props.telefono} - {props.correo}
                     </p>
                 </div>
-                <button className="btn" onClick={miFuncion}>Eliminar</button>
+                <button className="eliminar" onClick={miFuncion}>Eliminar</button>
             </div>
     );
 }
